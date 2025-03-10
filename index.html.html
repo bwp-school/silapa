@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ครูเกษตร....ออนไลน์ (เรียนได้ทุกที่...ทุกเวลา)</title>
+  <link rel="icon" href="https://www.i-pic.info/i/hkfc794543.png" type="image/x-icon">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: none; /* ซ่อน iframe ชั่วคราว */
+    }
+
+    /* Preloader Style */
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Prompt:wght@600&display=swap');
+    .hidden {
+      display: none !important;
+    }
+
+    #text_loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    #logoLoader {
+      width: 120px;
+      height: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(200, 200, 200, 0.85);
+      z-index: 10000;
+    }
+
+    #loader {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #f00;
+      animation: spin 2s linear infinite;
+    }
+
+    #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #0f0;
+      animation: spin 3s linear infinite;
+    }
+
+    #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #00f;
+      animation: spin 1.5s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="loader"></div>
+    <div id="text_loader">
+      <img id="logoLoader" src="https://firebasestorage.googleapis.com/v0/b/images-1f2b2.appspot.com/o/pic-projet%2FKru-Kasert%20(1)-Photoroom.png?alt=media&token=24722181-fb43-4fcc-a118-6702703e8d87" alt="Kru Kaset Online">
+    </div>
+  </div>
+
+  <!-- Iframe -->
+  <iframe id="iframe" src="https://script.google.com/macros/s/AKfycbzjgxozVyUA0QexNWo0JmrMzEdVJdMwHGTiHDvhkdkTnIcA0iK83Am0R_3mNCy-B6KHhA/exec?embedded=true"></iframe>
+  
+  <script>
+    // Simulate loading process
+    window.onload = function() {
+      setTimeout(function() {
+        // ซ่อน preloader หลังจาก 3 วินาที
+        document.getElementById("preloader").classList.add("hidden");
+        // แสดง iframe
+        document.getElementById("iframe").style.display = "block";
+      }, 3000); // Preloader จะหายไปหลัง 3 วินาที
+    };
+  </script>
+</body>
+</html>
